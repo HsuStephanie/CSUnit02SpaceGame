@@ -24,7 +24,7 @@ namespace SpaceGame
         }
         void Move()
         {
-            transform.Translate(Vector2.right * speed * Time.deltaTime); //This could be a single static method and use it in other classes in order to save performance
+            transform.Translate(Vector2.up * speed * Time.deltaTime); //This could be a single static method and use it in other classes in order to save performance
 
         }
 
@@ -38,7 +38,7 @@ namespace SpaceGame
             }
             else
             {
-                //do nothing
+                //do nothing :P
             }
 
             

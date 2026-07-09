@@ -16,7 +16,7 @@ namespace SpaceGame
         public virtual void Move(Vector2 direction){ } //not part of abstraction "contract"
         public virtual void Move (float speed){ } //not part of abstraction "contract"
         
-        public abstract void Shoot(Vector3 direction, float speed);
+        public abstract void Shoot();
         public abstract void Attack (float interval);
         public abstract void Die();
         public abstract void GetDamage(float damage);

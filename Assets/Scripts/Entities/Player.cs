@@ -6,15 +6,15 @@ namespace SpaceGame
 
     {
         [SerializeField] private Camera cam;
+        [SerializeField] private Bullet bulletPrefab;
+        [SerializeField] private Transform bulletSpawnPoint;
       
 
         private Rigidbody2D _playerRB;
-        public Health health = new Health(); //calling the health class. Creates an instance of Health. Accesses player's version of Health class
+        // public Health health = new Health(); //calling the health class. Creates an instance of Health. Accesses player's version of Health class
                                              //Health() creates currentHealth, maxHealth, and regenRate, and gives access to AddHealth() and RemoveHealth()
 
-        public Weapon weapon;
-        //*public Weapon; <-- needs to be created*
-
+        
         private void Start()
         {
 
@@ -24,14 +24,7 @@ namespace SpaceGame
         }
 
         //Player specific methods
-
-
-
-        public void PlayerDeath()
-        {
-            Debug.Log("You're dead");
-        }
-
+        //Overrides come from Playable Object class
         public override void Move(Vector2 direction, Vector2 target)
         {
             _playerRB.linearVelocity = direction * speed;
@@ -40,6 +33,11 @@ namespace SpaceGame
             target.y -= playerScreenPos.y;
             float angle = Mathf.Atan2(target.y, target.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0,0, (angle -90f));
+        }
+
+          public override void Shoot()
+        {
+            GameObject bulletClone = Instantiate(bulletPrefab.gameObject, bulletSpawnPoint.position, bulletSpawnPoint.rotation); //rotaiton adapts to parent object AKA parent.
         }
         public override void Attack(float interval)
         {
@@ -51,9 +49,7 @@ namespace SpaceGame
         {
         }
 
-        public override void Shoot(Vector3 direction, float speed)
-        {
-        }
+      
 
     }
 

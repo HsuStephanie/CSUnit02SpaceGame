@@ -61,7 +61,7 @@ namespace SpaceGame
         {
             Debug.Log("Attacking");
         }
-        public override void Shoot(Vector3 direction, float speed)
+        public override void Shoot()
         {
         }
 

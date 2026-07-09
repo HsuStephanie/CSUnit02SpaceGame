@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8374434851246503125}
   - component: {fileID: 477888135931256886}
   m_Layer: 0
-  m_Name: Triangle (2)
+  m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 1325111164047596750}
   - component: {fileID: 7761851156011987929}
   m_Layer: 0
-  m_Name: Triangle
+  m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 279691319470644707}
   - component: {fileID: 1102588007493552195}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -471,7 +471,7 @@ GameObject:
   - component: {fileID: 7800673277507338897}
   - component: {fileID: 8320243338684408234}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -552,6 +552,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!1 &5864269333995915885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 632898233303290107}
+  m_Layer: 0
+  m_Name: BulletSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &632898233303290107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5864269333995915885}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.35, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3287582018001348267}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6083021117730482782
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,7 +594,7 @@ GameObject:
   - component: {fileID: 2556170623897974258}
   - component: {fileID: 3100581784863318288}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -747,7 +778,7 @@ GameObject:
   - component: {fileID: 8165034934368310931}
   - component: {fileID: 6677225456380649782}
   m_Layer: 0
-  m_Name: Triangle (1)
+  m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -861,16 +892,17 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7800673277507338897}
   - {fileID: 1325111164047596750}
   - {fileID: 8165034934368310931}
   - {fileID: 8374434851246503125}
+  - {fileID: 7800673277507338897}
   - {fileID: 2556170623897974258}
   - {fileID: 279691319470644707}
   - {fileID: 1757015881018282527}
   - {fileID: 3355083414584687418}
   - {fileID: 6611606883126851607}
   - {fileID: 2584385213036593148}
+  - {fileID: 632898233303290107}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5341335082358672885
