@@ -18,7 +18,7 @@ namespace SpaceGame
             Move();
         }
 
-        void TImeToDestroy()
+        void TimeToDestroy()
         {
             Destroy(gameObject);
         }

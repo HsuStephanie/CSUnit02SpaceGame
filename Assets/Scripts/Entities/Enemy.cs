@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SpaceGame
 {
-    public class Enemy : PlayableObject
+    public class Enemy : PlayableObject, IDamageable
     {
         private EnemyType _enemyType;
         private Transform _target; //this is currently null
@@ -75,6 +75,8 @@ namespace SpaceGame
             Debug.Log("Enemy Died");
             Destroy(gameObject);
         }
+
+        //Not from abstract classes
         public virtual void EnemyAttack(float interval, float radius, float damage)
         {
             Debug.Log("Enemy attacking!");

@@ -1,25 +1,31 @@
 using UnityEngine;
 
+
 namespace SpaceGame
 {
-    public class Player : PlayableObject //PlayableObject is a Monobehavior, therefore Player will inhert from that too
+    public class Player : PlayableObject, IDamageable //PlayableObject is a Monobehavior, therefore Player will inhert from that too
 
     {
+
         [SerializeField] private Camera cam;
         [SerializeField] private Bullet bulletPrefab;
         [SerializeField] private Transform bulletSpawnPoint;
-      
+
+       
 
         private Rigidbody2D _playerRB;
         // public Health health = new Health(); //calling the health class. Creates an instance of Health. Accesses player's version of Health class
-                                             //Health() creates currentHealth, maxHealth, and regenRate, and gives access to AddHealth() and RemoveHealth()
+        //Health() creates currentHealth, maxHealth, and regenRate, and gives access to AddHealth() and RemoveHealth()
 
-        
+
         private void Start()
         {
-
+         
             health = new Health(100, 0.5f);
             _playerRB = GetComponent<Rigidbody2D>();
+            this.nickName = "Bob";
+            this.speed = 2f;
+
 
         }
 
@@ -32,15 +38,16 @@ namespace SpaceGame
             target.x -= playerScreenPos.x;
             target.y -= playerScreenPos.y;
             float angle = Mathf.Atan2(target.y, target.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0,0, (angle -90f));
+            transform.rotation = Quaternion.Euler(0, 0, (angle - 90f));
         }
 
-          public override void Shoot()
+        public override void Shoot()
         {
             GameObject bulletClone = Instantiate(bulletPrefab.gameObject, bulletSpawnPoint.position, bulletSpawnPoint.rotation); //rotaiton adapts to parent object AKA parent.
         }
         public override void Attack(float interval)
         {
+            //This is here bc the enmy needs to attack and abstract method is a contract. This will do nothing for the player, but prevent "red" errors
         }
         public override void Die()
         {
@@ -49,9 +56,12 @@ namespace SpaceGame
         }
         public override void GetDamage(float damage)
         {
+
         }
 
-      
+
+
+
 
     }
 

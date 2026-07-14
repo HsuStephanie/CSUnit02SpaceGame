@@ -119,6 +119,25 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &831318582 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5253672439582649683, guid: bffdbd90697ac4887bfa2a70923c4364, type: 3}
+  m_PrefabInstance: {fileID: 2347298407101055016}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &831318585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831318582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c9dec1707ddb4a3daef53a8f40e10bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpaceGame.ShooterEnemy
+  nickName: 
+  speed: 0.5
 --- !u!1 &1357956932
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,7 +515,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5253672439582649683, guid: bffdbd90697ac4887bfa2a70923c4364, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 831318585}
   m_SourcePrefab: {fileID: 100100000, guid: bffdbd90697ac4887bfa2a70923c4364, type: 3}
 --- !u!1001 &4600703357517040028
 PrefabInstance:
@@ -506,6 +528,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1146118689489706316, guid: b8926130721ea427c8441c9debd8e395, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3287582018001348267, guid: b8926130721ea427c8441c9debd8e395, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -557,6 +583,10 @@ PrefabInstance:
     - target: {fileID: 6649779807924366817, guid: b8926130721ea427c8441c9debd8e395, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7002421685921230876, guid: b8926130721ea427c8441c9debd8e395, type: 3}
+      propertyPath: m_Camera
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
