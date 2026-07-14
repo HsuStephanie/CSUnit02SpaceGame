@@ -622,7 +622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpaceGame.Player
   nickName: 
-  speed: 5
+  speed: 6
   cam: {fileID: 1988919081}
   bulletPrefab: {fileID: 368729410092860596, guid: 730d1ad4ed34d427094c0cf248f3e711, type: 3}
   bulletSpawnPoint: {fileID: 4600703357517040030}
