@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace SpaceGame
 {
-    public class Player : PlayableObject //relationship
+    public class Player : PlayableObject //PlayableObject is a Monobehavior, therefore Player will inhert from that too
 
     {
         [SerializeField] private Camera cam;
@@ -44,6 +44,8 @@ namespace SpaceGame
         }
         public override void Die()
         {
+            Destroy(gameObject);
+            Debug.Log("You died!");
         }
         public override void GetDamage(float damage)
         {

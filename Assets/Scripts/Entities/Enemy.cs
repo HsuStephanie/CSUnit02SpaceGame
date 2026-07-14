@@ -61,6 +61,7 @@ namespace SpaceGame
         {
             Debug.Log("Attacking");
         }
+        
         public override void Shoot()
         {
         }
@@ -74,7 +75,10 @@ namespace SpaceGame
             Debug.Log("Enemy Died");
             Destroy(gameObject);
         }
-
+        public virtual void EnemyAttack(float interval, float radius, float damage)
+        {
+            Debug.Log("Enemy attacking!");
+        }
         public void SetEnemyType(EnemyType enemyType)
         {
             this._enemyType = enemyType;

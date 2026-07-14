@@ -1,12 +1,15 @@
 using UnityEngine;
 namespace SpaceGame
 {
-    //Non MonoBehavior Class
-//Encapsulation: Player will have instance of health and so will Enemies
-//Methods like Start, Update, Awake OnCollisionEnter were part of MonoBehavior Class, a class that Unity created. They do not exist in general C#.
-//non Monobehavior scripts cannot be added to Objects. So we can't use serialized variables becasue they can't be visualized in project
-
-//Constructor--is a method that is the same spelling as the class.
+ 
+ /// <summary>
+/// Non MonoBehavior Class
+///Encapsulation: Player will have instance of health and so will Enemies
+///Methods like Start, Update, Awake OnCollisionEnter were part of MonoBehavior Class, a class that Unity created. They do not exist in general C#.
+///non Monobehavior scripts cannot be added to Objects. So we can't use serialized variables becasue they can't be visualized in project
+///Constructor--is a method that is the same spelling as the class.
+/// </summary>
+    
 
 
 //This class is meant for creating a new object.

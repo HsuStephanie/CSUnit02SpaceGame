@@ -4,7 +4,7 @@ namespace SpaceGame
 {
     //Abstract classes are a way to structure your project by making a contract to force iherrited objects to implement SOME version of abstract method
     
-    public abstract class PlayableObject : MonoBehaviour, IDamageable
+    public abstract class PlayableObject : MonoBehaviour //, IDamageable
     {
         public Health health = new Health();
         public Weapon weapon;

@@ -316,7 +316,7 @@ MonoBehaviour:
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
-  m_Antialiasing: 3
+  m_Antialiasing: 2
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -561,8 +561,53 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6649779807924366817, guid: b8926130721ea427c8441c9debd8e395, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4600703357517040032}
+    - targetCorrespondingSourceObject: {fileID: 6649779807924366817, guid: b8926130721ea427c8441c9debd8e395, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4600703357517040031}
   m_SourcePrefab: {fileID: 100100000, guid: b8926130721ea427c8441c9debd8e395, type: 3}
+--- !u!1 &4600703357517040029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6649779807924366817, guid: b8926130721ea427c8441c9debd8e395, type: 3}
+  m_PrefabInstance: {fileID: 4600703357517040028}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4600703357517040030 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 632898233303290107, guid: b8926130721ea427c8441c9debd8e395, type: 3}
+  m_PrefabInstance: {fileID: 4600703357517040028}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4600703357517040031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4600703357517040029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5077655b62c84102964e78feaad32ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpaceGame.Player
+  nickName: 
+  speed: 5
+  cam: {fileID: 1988919081}
+  bulletPrefab: {fileID: 368729410092860596, guid: 730d1ad4ed34d427094c0cf248f3e711, type: 3}
+  bulletSpawnPoint: {fileID: 4600703357517040030}
+--- !u!114 &4600703357517040032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4600703357517040029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4b534261522b48be87e58cd7148425f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpaceGame.PlayerInput
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

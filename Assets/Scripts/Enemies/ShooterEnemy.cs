@@ -2,7 +2,8 @@ using UnityEngine;
 
 namespace SpaceGame
 {
-    public class MeleeEnemy : Enemy
+    public class ShooterEnemy : Enemy
     {
+       
     }
 }
