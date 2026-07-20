@@ -5,30 +5,38 @@ namespace SpaceGame
     //This is a constructor for name and damage of weapon to be loaded from.
     //CANNOT go directly on an object.
     public class Weapon
-{
-    private string name;
-    private float damage;
+    {
+        private string name;
+        private float damage;
+        private float bulletSpeed; //bullet has a speed, but the weapon should be controlling the speed
 
 
-    public Weapon (string _name, float _damage)
+        public Weapon(string _name, float _damage, float _bulletSpeed = 11f)
         {
             name = _name;
             damage = _damage;
+            bulletSpeed = _bulletSpeed;
         }
 
 
-    public Weapon()
+        public Weapon()
         {
-            
+
         }
 
-    public void Shoot()
+        public void Shoot(Bullet _bullet, Transform _shootPosition, string _targetTag)
         {
-           
+
             
-                 Debug.Log("Shooting from gun");
-            
+            Debug.Log("Shooting from gun");
+            Bullet tempBullet = GameObject.Instantiate(_bullet, _shootPosition.position, _shootPosition.rotation);
+            tempBullet.SetBullet(damage, _targetTag, bulletSpeed);
         }
-}
+
+        public float GetDamage()
+        {
+            return damage;
+        }
+    }
 
 }

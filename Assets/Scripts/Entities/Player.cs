@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System;
 
 namespace SpaceGame
 {
@@ -10,13 +10,22 @@ namespace SpaceGame
         [SerializeField] private Camera cam;
         [SerializeField] private Bullet bulletPrefab;
         [SerializeField] private Transform bulletSpawnPoint;
+        [SerializeField] private string targetTag = "Enemy";
 
-       
+        [Header("Weapon stats")]
+        [SerializeField] private float weaponDamage = 1f;
+        
+        [Header("Bullet stats")]
+        [SerializeField] private float bulletSpeed = 10f;
+        
+
+        public Action OnDealth;
 
         private Rigidbody2D _playerRB;
         // public Health health = new Health(); //calling the health class. Creates an instance of Health. Accesses player's version of Health class
         //Health() creates currentHealth, maxHealth, and regenRate, and gives access to AddHealth() and RemoveHealth()
-
+        
+        [SerializeField] private UIManager uIManager;
 
         private void Start()
         {
@@ -25,7 +34,13 @@ namespace SpaceGame
             _playerRB = GetComponent<Rigidbody2D>();
             this.nickName = "Bob";
             this.speed = 2f;
+            weapon = new Weapon("Player Weapon", weaponDamage, bulletSpeed); 
 
+
+        }
+        void Update()
+        {
+            uIManager.UpdateHealth(health.GetHealth());
 
         }
 
@@ -43,7 +58,7 @@ namespace SpaceGame
 
         public override void Shoot()
         {
-            GameObject bulletClone = Instantiate(bulletPrefab.gameObject, bulletSpawnPoint.position, bulletSpawnPoint.rotation); //rotaiton adapts to parent object AKA parent.
+            weapon.Shoot(bulletPrefab, bulletSpawnPoint, targetTag);
         }
         public override void Attack(float interval)
         {
@@ -51,12 +66,18 @@ namespace SpaceGame
         }
         public override void Die()
         {
+            //C# action
+            OnDealth?.Invoke(); //when player dies, will call the Gameover condition
+            //
+
             Destroy(gameObject);
             Debug.Log("You died!");
         }
         public override void GetDamage(float damage)
         {
-
+            health.RemoveHealth(damage);//Player is receiving damage
+           if (health.GetHealth() <=0)
+            Die();
         }
 
 

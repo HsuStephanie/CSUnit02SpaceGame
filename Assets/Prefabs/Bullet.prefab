@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 368729410092860596}
   m_Layer: 6
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,5 +170,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e7afcdeb86ad4c27b2f75967eda444b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpaceGame.Bullet
-  speed: 1
-  damage: 1
+  speed: 0
+  damage: 0

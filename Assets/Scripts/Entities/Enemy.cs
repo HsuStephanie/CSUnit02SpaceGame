@@ -1,12 +1,14 @@
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
+using System;
 
 namespace SpaceGame
 {
     public class Enemy : PlayableObject, IDamageable
     {
         private EnemyType _enemyType;
-        private Transform _target; //this is currently null
+        protected Transform _target; //this is currently null
 
 
         /// <summary>
@@ -14,7 +16,17 @@ namespace SpaceGame
         /// </summary>
         protected virtual void Start() //children of Enemy class will be able to use this version of "Start" method
         {
-            _target = GameObject.FindGameObjectWithTag("Player").transform;
+            //Enemy will try to find the player target. If there's no player target, the enemy will be destroyed
+            try
+            {
+                _target = GameObject.FindGameObjectWithTag("Player").transform;
+            }
+            catch (NullReferenceException)
+            {
+                Debug.Log("Enemy could not find target player");
+                Destroy(gameObject);
+            }
+            
         }
         protected virtual void Update()
         {
@@ -68,6 +80,9 @@ namespace SpaceGame
 
         public override void GetDamage(float damage)
         {
+            health.RemoveHealth(damage);
+            if (health.GetHealth() <=0)
+            Die();
         }
 
         public override void Die()
