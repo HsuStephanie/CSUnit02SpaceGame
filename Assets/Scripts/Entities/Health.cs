@@ -15,6 +15,8 @@ namespace SpaceGame
     //C# actions vs Unity events. C# are usually better 
 
     //This class is meant for creating a new object.
+    [DefaultExecutionOrder(-10)]
+
     public class Health
     {
 

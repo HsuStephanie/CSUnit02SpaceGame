@@ -3,6 +3,8 @@ using System;
 
 namespace SpaceGame
 {
+
+    [DefaultExecutionOrder(-10)]
     public class Player : PlayableObject, IDamageable //PlayableObject is a Monobehavior, therefore Player will inhert from that too
 
     {
@@ -38,11 +40,7 @@ namespace SpaceGame
 
 
         }
-        void Update()
-        {
-            uIManager.UpdateHealth(health.GetHealth());
-
-        }
+        
 
         //Player specific methods
         //Overrides come from Playable Object class

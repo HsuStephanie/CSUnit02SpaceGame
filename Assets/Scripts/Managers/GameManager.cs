@@ -30,15 +30,16 @@ namespace SpaceGame
         private bool _isPowerUpSpawning;
         private bool _isPlaying;
 
+        [Header("Unity Actions")]
         public Action OnGameStart;
         public Action OnGameOver;
 
 
         [SerializeField] private Player player;
+
+        [SerializeField] public ScoreManager scoreManager;
+        [SerializeField] private UIManager uIManager;
         
-
-
-
         #region Pseudo code
         //public ScoreManager scoreManager;
         //Bullet- BulletCount. fireRate
@@ -66,6 +67,7 @@ namespace SpaceGame
             {
                 Destroy(this);
             }
+            instance = this;
         }
 
         #endregion

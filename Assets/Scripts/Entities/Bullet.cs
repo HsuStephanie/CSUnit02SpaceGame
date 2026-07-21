@@ -6,13 +6,13 @@ namespace SpaceGame
         [SerializeField] private float speed;
         [SerializeField] private float damage;
 
-        private string targetTag = "Enemy";
+        private string targetTag;
 
         //Bullet is going to be a trigger.
 
         void Start()
         {
-            SetBullet(damage, "Enemy", speed);
+            SetBullet(100, "Enemy");
             Invoke("TimeToDestroy", 5f);
             
         }
@@ -35,7 +35,7 @@ namespace SpaceGame
         {
             this.damage = _damage;
             this.speed = _speed;
-            this.targetTag = _targetTag = string.Empty;
+            this.targetTag = _targetTag;
         }
 
         void Damage(IDamageable damageable)
@@ -44,6 +44,7 @@ namespace SpaceGame
             {
                 Debug.Log("Damaged object");
                 damageable.GetDamage(damage);
+                GameManager.getInstance().scoreManager.IncrementScore();
                 Destroy(gameObject); //destroy bullet
             }
             else
