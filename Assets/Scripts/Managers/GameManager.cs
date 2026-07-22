@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace SpaceGame
 {
@@ -111,6 +112,13 @@ namespace SpaceGame
             StartCoroutine(GameStopper());
         }
 
+        public void RestartGame()
+        {
+            
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    
+        }
+
         IEnumerator GameStopper()
         {
             yield return new WaitForSeconds(2.0f);
@@ -122,6 +130,7 @@ namespace SpaceGame
             }
 
             OnGameOver?.Invoke();
+            
         }
 
         void CreateEnemy()

@@ -18,15 +18,20 @@ namespace SpaceGame
         public UnityEvent OnScoreUpdate;
         public UnityEvent OnHighScoreUpdate;
 
+        private Player player;
+
         private void Start()
         {
             _highScore = PlayerPrefs.GetInt("Highscore", 0);
+            player = GameManager.getInstance().GetPlayer();
             OnHighScoreUpdate?.Invoke(); //used to retrieve the high score
             GameManager.getInstance().OnGameStart += OnGameStart;
+        
         }
 
         public void OnGameStart()
         {
+            player.OnDealth += SetHighScore;
             _score = 0;
         }
 

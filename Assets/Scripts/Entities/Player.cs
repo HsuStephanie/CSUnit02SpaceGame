@@ -35,7 +35,7 @@ namespace SpaceGame
             health = new Health(100, 0.5f);
             _playerRB = GetComponent<Rigidbody2D>();
             this.nickName = "Bob";
-            this.speed = 2f;
+            this.speed = 10f;
             weapon = new Weapon("Player Weapon", weaponDamage, bulletSpeed); 
 
 

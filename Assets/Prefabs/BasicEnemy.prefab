@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpaceGame.MeleeEnemy
   nickName: 
-  speed: 1
+  speed: 2
   attackRange: 2
   attackTime: 1
 --- !u!114 &4829427478180137335

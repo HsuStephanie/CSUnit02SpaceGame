@@ -3,6 +3,8 @@ using UnityEngine;
 
 namespace SpaceGame
 {
+    [DefaultExecutionOrder(-9)]
+    
     public class UIManager : MonoBehaviour
     {
 
@@ -53,7 +55,8 @@ namespace SpaceGame
         }
         public void GameOver()
         {
-
+            menuObject.SetActive(true);
+            gameOverObject.SetActive(true);
 
         }
 
