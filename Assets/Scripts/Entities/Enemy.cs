@@ -1,5 +1,4 @@
 using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
 using System;
 
@@ -88,6 +87,7 @@ namespace SpaceGame
         public override void Die()
         {
             Debug.Log("Enemy Died");
+            GameManager.getInstance().NotifyDeath(this);//calls the method when this gameObject dies
             Destroy(gameObject);
         }
 

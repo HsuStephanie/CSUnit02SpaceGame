@@ -24,7 +24,7 @@ namespace SpaceGame
         [SerializeField] private float enemySpawnRate;
         [SerializeField] private Weapon enemyWeapon = new Weapon("Melee", 1f, 0f);
         [SerializeField] private float powerUpSpawnRate;
-        
+
         [Header("Game Logic Control")]
         private GameObject _tempEnemy;
         private bool _isEnemySpawning;
@@ -38,9 +38,13 @@ namespace SpaceGame
 
         [SerializeField] private Player player;
 
-        [SerializeField] public ScoreManager scoreManager;
+
         [SerializeField] private UIManager uIManager;
-        
+
+        public PickUpSpawner pickUpSpawner;
+        public ScoreManager scoreManager;
+
+
         #region Pseudo code
         //public ScoreManager scoreManager;
         //Bullet- BulletCount. fireRate
@@ -80,14 +84,12 @@ namespace SpaceGame
 
         }
 
-
-
         private void Start()
         {
             StartGame();
         }
-        //for encapsulation, if something needs to check if the game is playing
-        public bool IsPlaying()
+        //----------------//
+        public bool IsPlaying() //for encapsulation, if something needs to check if the game is playing
         {
             return _isPlaying;
         }
@@ -96,13 +98,15 @@ namespace SpaceGame
         {
             return player;
         }
+
+        //--Public Methods--//
         public void StartGame()
         {
             _isPlaying = true;
             _isEnemySpawning = true;
             StartCoroutine(EnemySpawner());
             //you could create player here
-        
+
             player.OnDealth += StopGame;//Subscribing to Health OnDeath Action
             OnGameStart?.Invoke(); //broadcasting that the game is starting and calling to subscribed methods
         }
@@ -114,39 +118,46 @@ namespace SpaceGame
 
         public void RestartGame()
         {
-            
+
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    
+
         }
 
+        public void NotifyDeath(Enemy enemy)
+        {
+            pickUpSpawner.SpawnPickUp(enemy.transform.position);
+        }
+        //--Private Methods--//
         IEnumerator GameStopper()
         {
             yield return new WaitForSeconds(2.0f);
             _isPlaying = false;
-            
-            foreach(Enemy item in FindObjectsByType(typeof(Enemy)))
+
+            foreach (Enemy item in FindObjectsByType(typeof(Enemy)))
             {
                 Destroy(item.gameObject);
             }
 
             OnGameOver?.Invoke();
-            
+
         }
 
         void CreateEnemy()
         {
             _tempEnemy = Instantiate(enemyPrefab);
-            _tempEnemy.transform.position = spawnPoints[UnityEngine.Random.Range(0,spawnPoints.Length)].position;
+            _tempEnemy.transform.position = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)].position;
             _tempEnemy.GetComponent<Enemy>().weapon = enemyWeapon;
             _tempEnemy.GetComponent<MeleeEnemy>().SetMeleeEnemy(2f, 1f);
         }
+
+
 
         IEnumerator EnemySpawner()
         {
             while (_isEnemySpawning)
             {
-                yield return new WaitForSeconds( 1.0f/enemySpawnRate);
-                CreateEnemy();   
+                yield return new WaitForSeconds(1.0f / enemySpawnRate);
+                CreateEnemy();
             }
         }
 
