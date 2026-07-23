@@ -14,28 +14,24 @@ namespace SpaceGame
     /// </summary>
     public class StackExample : MonoBehaviour
     {
-        public GameObject testObject;
-        public Stack<GameObject> stack = new Stack<GameObject>();
+        // public GameObject testObject;
+        // public Stack<GameObject> stack = new Stack<GameObject>();
         
 
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
-            GameObject tempObject = Instantiate(testObject);
-            tempObject.transform.position = new Vector3 (0,0,0);
+        // // Start is called once before the first execution of Update after the MonoBehaviour is created
+        // void Start()
+        // {
+        //     GameObject tempObject = Instantiate(testObject);
+        //     tempObject.transform.position = new Vector3 (0,0,0);
 
-            stack.Push(tempObject); //Adding the item to the top
+        //     stack.Push(tempObject); //Adding the item to the top
 
-            GameObject peekObject = stack.Peek(); //this will not REMOVE the item, but let us look at the "top" of the stack
-            stack.Pop(); //removes item from the index. Other indexes are moved up.
-            //Pop removes at index [0]. what was index [1] becomes index[0]
+        //     GameObject peekObject = stack.Peek(); //this will not REMOVE the item, but let us look at the "top" of the stack
+        //     stack.Pop(); //removes item from the index. Other indexes are moved up.
+        //     //Pop removes at index [0]. what was index [1] becomes index[0]
 
-        }
+        // }
 
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
+       
     }
 }

@@ -17,30 +17,30 @@ namespace SpaceGame
     /// </summary>
     public class DictionaryExample : MonoBehaviour
     {
-        public Dictionary<string, int> myDictionary = new Dictionary<string, int>();//int could also be GameObject, player, anything
-        public string checkKey = "Gems";
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
-             //use TryAdd-- will make sure that everything is unique terms
-            myDictionary.Add("Gems", 0); //all are set value to 0. When the player starts, the inventory will be 0
-            myDictionary.Add("Coins", 0);
-            myDictionary.Add("Bullets", 0);
-            myDictionary.Add("BottleCaps", 0);
-        }
+        // public Dictionary<string, int> myDictionary = new Dictionary<string, int>();//int could also be GameObject, player, anything
+        // public string checkKey = "Gems";
+        // // Start is called once before the first execution of Update after the MonoBehaviour is created
+        // void Start()
+        // {
+        //      //use TryAdd-- will make sure that everything is unique terms
+        //     myDictionary.Add("Gems", 0); //all are set value to 0. When the player starts, the inventory will be 0
+        //     myDictionary.Add("Coins", 0);
+        //     myDictionary.Add("Bullets", 0);
+        //     myDictionary.Add("BottleCaps", 0);
+        // }
 
-        void AddGems() //will add 1 gem to the count
-        {
-            if (myDictionary.ContainsKey(checkKey)) //CcontainsKey is like a bool
-            {
-                myDictionary["Gems"] ++;
-                //or myDictionary[checkKey] ++;
-            }
-        }
-        void CheckKey()
-        {
-            bool hasKey = myDictionary.TryGetValue(checkKey, out int value);
-            Debug.Log(checkKey + value);
-        }
+        // void AddGems() //will add 1 gem to the count
+        // {
+        //     if (myDictionary.ContainsKey(checkKey)) //CcontainsKey is like a bool
+        //     {
+        //         myDictionary["Gems"] ++;
+        //         //or myDictionary[checkKey] ++;
+        //     }
+        // }
+        // void CheckKey()
+        // {
+        //     bool hasKey = myDictionary.TryGetValue(checkKey, out int value);
+        //     Debug.Log(checkKey + value);
+        // }
     }
 }

@@ -13,21 +13,17 @@ namespace SpaceGame
     /// </summary>
     public class QueueExample : MonoBehaviour
     {
-        public GameObject testObject;
-        public Queue<GameObject> myQueue = new Queue<GameObject>();
+        // public GameObject testObject;
+        // public Queue<GameObject> myQueue = new Queue<GameObject>();
 
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
-            myQueue.Enqueue(testObject); //adding to the queue at end of the line
-            myQueue.Dequeue(); //removing the first item in line
+        // // Start is called once before the first execution of Update after the MonoBehaviour is created
+        // void Start()
+        // {
+        //     myQueue.Enqueue(testObject); //adding to the queue at end of the line
+        //     myQueue.Dequeue(); //removing the first item in line
 
-        }
+        // }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+       
     }
 }
