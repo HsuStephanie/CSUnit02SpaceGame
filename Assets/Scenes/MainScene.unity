@@ -6367,8 +6367,9 @@ MonoBehaviour:
   enemySpawnRate: 1
   powerUpSpawnRate: 1
   player: {fileID: 4600703357517040031}
-  scoreManager: {fileID: 949392145}
   uIManager: {fileID: 319738579}
+  pickUpSpawner: {fileID: 1885389415}
+  scoreManager: {fileID: 949392145}
 --- !u!1 &1604808418
 GameObject:
   m_ObjectHideFlags: 0
@@ -6718,6 +6719,54 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1885389414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1885389416}
+  - component: {fileID: 1885389415}
+  m_Layer: 0
+  m_Name: PickupSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1885389415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885389414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dacceab931084c85bbd8c04dd724e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpaceGame.PickUpSpawner
+  pickUps:
+  - pickup: {fileID: 3670156342085397717, guid: 0caf264b5197c4376ab33a8957657517, type: 3}
+    spawnWeight: 1
+  pickupProbability: 0.5
+--- !u!4 &1885389416
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885389414}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 431.07568, y: 310.1773, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7311,6 +7360,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1391675685}
+  - {fileID: 1885389416}
   - {fileID: 319738580}
   - {fileID: 949392146}
   - {fileID: 1988919082}
