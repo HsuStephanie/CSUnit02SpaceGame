@@ -28,15 +28,8 @@ namespace SpaceGame
             GameManager.getInstance().OnGameOver += GameOver;
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         public void GameStarted()
         {
-
             Debug.Log("Game Started");
             menuObject.SetActive(false);
             gameOverObject.SetActive(false);
@@ -64,10 +57,6 @@ namespace SpaceGame
         {
             textHealth.SetText(currentHealth.ToString());
         }
-
-       
-        
-
 
     }
 }

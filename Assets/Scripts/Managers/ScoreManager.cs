@@ -2,13 +2,12 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 
 
 namespace SpaceGame
 {
     /// <summary>
-    /// Player prefs is a dictionary. Some data can be stored in Player prefs.
+    /// Player prefs is a dictionary. Some data can be stored in Player prefs but not a lot.
     /// </summary>
     public class ScoreManager : MonoBehaviour
     {

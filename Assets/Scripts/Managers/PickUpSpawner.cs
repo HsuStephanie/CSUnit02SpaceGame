@@ -6,11 +6,12 @@ namespace SpaceGame
 {
     public class PickUpSpawner : MonoBehaviour
     {
-        [SerializeField] private PickUpSpawn[] pickUps; //All of prefab pickups will populate this array
+        [SerializeField] private PickUpSpawn[] pickUps; //All of prefab pickups will populate into this array
         [Range(0,1)]
         [SerializeField] private float pickupProbability;
-        List<Pickup> pickUpPool = new List<Pickup>();
-        Pickup chosenPickup;
+        List<Pickup> pickUpPool = new List<Pickup>(); 
+        Pickup chosenPickup; //the pickup that is spawned by the enemy
+        
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {

@@ -15,7 +15,7 @@ namespace SpaceGame
 
         [Header("Entities")]
         [SerializeField] private GameObject enemyPrefab;
-        [SerializeField] private Transform[] spawnPoints; //this also could be a list
+        [SerializeField] private Transform[] spawnPoints;
 
         /// <summary>
         /// Thigs that affect fun of gameplay.
@@ -37,8 +37,6 @@ namespace SpaceGame
 
 
         [SerializeField] private Player player;
-
-
         [SerializeField] private UIManager uIManager;
 
         public PickUpSpawner pickUpSpawner;
