@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8093478259882054052}
   - component: {fileID: 5099008871195987941}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hexagon Flat Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,6 +152,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExploderEnemy Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5253672439582649683, guid: bffdbd90697ac4887bfa2a70923c4364, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2311395960298714309, guid: bffdbd90697ac4887bfa2a70923c4364, type: 3}
     - {fileID: 2154523990556467772, guid: bffdbd90697ac4887bfa2a70923c4364, type: 3}
@@ -168,6 +172,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5253672439582649683, guid: bffdbd90697ac4887bfa2a70923c4364, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4268109837695144457}
+    - targetCorrespondingSourceObject: {fileID: 5253672439582649683, guid: bffdbd90697ac4887bfa2a70923c4364, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4173925876984303298}
   m_SourcePrefab: {fileID: 100100000, guid: bffdbd90697ac4887bfa2a70923c4364, type: 3}
 --- !u!4 &128440201549427941 stripped
 Transform:
@@ -247,6 +254,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpaceGame.ExploderEnemy
   nickName: 
-  speed: 5
-  explodeRadius: 0
-  explodeDamage: 0
+  speed: 1
+  explodeRadius: 3
+  explodeDamage: 2
+  timeToExplode: 8
+  explosionBlast: {fileID: 3144832171569544565, guid: cd6d93480fa664b22b551531919a794c, type: 3}
+--- !u!114 &4173925876984303298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6100023102547354638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d693a4dbaf9f3453395083bf26f9c039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpaceGame.ChangeColor
+  startColor: {r: 0, g: 0, b: 0, a: 0}
+  currentColor: {r: 0, g: 0, b: 0, a: 0}

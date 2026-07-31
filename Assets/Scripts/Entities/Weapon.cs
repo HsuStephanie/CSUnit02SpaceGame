@@ -11,7 +11,7 @@ namespace SpaceGame
         private float bulletSpeed; //bullet has a speed, but the weapon should be controlling the speed
 
 
-        public Weapon(string _name, float _damage, float _bulletSpeed = 11f)
+        public Weapon(string _name, float _damage, float _bulletSpeed)
         {
             name = _name;
             damage = _damage;

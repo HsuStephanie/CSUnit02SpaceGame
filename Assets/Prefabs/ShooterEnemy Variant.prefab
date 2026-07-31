@@ -92,6 +92,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!1 &8012576928113486014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5674845221747406656}
+  m_Layer: 0
+  m_Name: bullet spawn point
+  m_TagString: Untagged
+  m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5674845221747406656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8012576928113486014}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.712, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7567407167410866884}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8395820872428500860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -161,6 +192,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2127711268619697592, guid: bffdbd90697ac4887bfa2a70923c4364, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8646781371295969098}
+    - targetCorrespondingSourceObject: {fileID: 2127711268619697592, guid: bffdbd90697ac4887bfa2a70923c4364, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5674845221747406656}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5253672439582649683, guid: bffdbd90697ac4887bfa2a70923c4364, type: 3}
       insertIndex: -1
@@ -239,7 +273,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpaceGame.ShooterEnemy
   nickName: 
-  speed: 5
+  speed: 0.5
+  attackRange: 0.5
+  attackTime: 0.1
 --- !u!4 &7567407167410866884 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2127711268619697592, guid: bffdbd90697ac4887bfa2a70923c4364, type: 3}

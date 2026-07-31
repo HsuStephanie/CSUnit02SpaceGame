@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1cac101ccce14e4d9313d07185d1838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpaceGame.HealthPickup
-  healthMin: 5
-  healthMax: 20
+  healthMin: 1
+  healthMax: 1
 --- !u!60 &2125525950104116984
 PolygonCollider2D:
   m_ObjectHideFlags: 0

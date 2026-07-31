@@ -13,7 +13,7 @@ namespace SpaceGame
         public override void OnPicked()
         {
             base.OnPicked();
-            float health = Random.Range(healthMax, healthMax);
+            float health = Random.Range(healthMin, healthMax);
             Player player = GameManager.getInstance().GetPlayer();
             player.health.AddHealth(health);
         }

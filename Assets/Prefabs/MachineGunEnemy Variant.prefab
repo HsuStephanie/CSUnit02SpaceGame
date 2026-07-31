@@ -271,6 +271,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4829427478180137335, guid: bffdbd90697ac4887bfa2a70923c4364, type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5253672439582649683, guid: bffdbd90697ac4887bfa2a70923c4364, type: 3}
       propertyPath: m_Name
       value: MachineGunEnemy Variant
@@ -362,11 +366,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpaceGame.MachineGunEnemy
   nickName: 
-  speed: 5
+  speed: 0
   attackRange: 5
   attackTime: 2
-  bulletPrefab: {fileID: 0}
-  bulletSpawnPoint: {fileID: 0}
+  rotationSpeed: 10
+  bulletPrefab: {fileID: 2177663332647351231, guid: c231e16cb3fb8479db0ff17b75c84263, type: 3}
+  bulletSpawnPoint: {fileID: 2257143820905038252}
 --- !u!4 &5232200077709897752 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2127711268619697592, guid: bffdbd90697ac4887bfa2a70923c4364, type: 3}

@@ -11,10 +11,10 @@ namespace SpaceGame
     /// </summary>
     public class GameManager : MonoBehaviour
     {
-        private Weapon peaShooter = new Weapon();
+        // private Weapon peaShooter = new Weapon();
 
         [Header("Entities")]
-        [SerializeField] private GameObject enemyPrefab;
+        [SerializeField] private GameObject[] enemyPrefab;
         [SerializeField] private Transform[] spawnPoints;
 
         /// <summary>
@@ -22,13 +22,13 @@ namespace SpaceGame
         /// </summary>
         [Header("Game Variables")]
         [SerializeField] private float enemySpawnRate;
-        [SerializeField] private Weapon enemyWeapon = new Weapon("Melee", 1f, 0f);
+        // [SerializeField] private Weapon enemyWeapon = new Weapon("Melee", 1f, 0f);
         [SerializeField] private float powerUpSpawnRate;
 
         [Header("Game Logic Control")]
         private GameObject _tempEnemy;
         private bool _isEnemySpawning;
-        private bool _isPowerUpSpawning;
+        // private bool _isPowerUpSpawning;
         private bool _isPlaying;
 
         [Header("Unity Actions")]
@@ -44,16 +44,17 @@ namespace SpaceGame
 
 
         #region Pseudo code
-        //public ScoreManager scoreManager;
+        //public ScoreManager scoreManager; DONE
         //Bullet- BulletCount. fireRate
         //obstacles - asteroids
-        //power ups
-        //score- scoreManager -> enemies destroyed
+        //power ups DONE
+        //score- scoreManager -> enemies destroyed DONE
         //enemies ->spawn Rate -> enemy Type -> enemy prefab -> Bosses.
-        //UI Manager -> GameOver method -> GameOverScreen
+        //UI Manager -> GameOver method -> GameOverScreen DONE
         //Particle effect Manager -> VFX Graph (isn't supported by webGL)
-        //Animaation Manager -> Enemy change to attack state
+        //Animation Manager -> Enemy change to attack state
         //Sound Manager
+
         #endregion
 
         #region Singleton
@@ -142,19 +143,18 @@ namespace SpaceGame
 
         void CreateEnemy()
         {
-            _tempEnemy = Instantiate(enemyPrefab);
+            // _tempEnemy = Instantiate(enemyPrefab[chosenPrefab]);
+            _tempEnemy = Instantiate(enemyPrefab[UnityEngine.Random.Range(0, enemyPrefab.Length)]);
             _tempEnemy.transform.position = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)].position;
-            _tempEnemy.GetComponent<Enemy>().weapon = enemyWeapon;
-            _tempEnemy.GetComponent<MeleeEnemy>().SetMeleeEnemy(2f, 1f);
+            // _tempEnemy.GetComponent<Enemy>().weapon = enemyWeapon;
+            // _tempEnemy.GetComponent<MeleeEnemy>().SetMeleeEnemy(2f, 1f);
         }
-
-
 
         IEnumerator EnemySpawner()
         {
             while (_isEnemySpawning)
             {
-                yield return new WaitForSeconds(1.0f / enemySpawnRate);
+                yield return new WaitForSeconds(3.0f / enemySpawnRate);
                 CreateEnemy();
             }
         }

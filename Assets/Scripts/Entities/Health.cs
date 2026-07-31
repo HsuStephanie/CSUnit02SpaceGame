@@ -53,6 +53,7 @@ namespace SpaceGame
         {
             currentHealth += value;
             OnHealthUpdate?.Invoke(currentHealth);
+            Debug.Log("Health add value: " + value);
         }
 
         public void RemoveHealth(float value)
