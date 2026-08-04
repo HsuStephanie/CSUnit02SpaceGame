@@ -1,4 +1,4 @@
-using Unity.Mathematics;
+
 using UnityEngine;
 using System;
 
@@ -25,7 +25,7 @@ namespace SpaceGame
                 Debug.Log("Enemy could not find target player");
                 Destroy(gameObject);
             }
-            
+
         }
         protected virtual void Update()
         {
@@ -43,6 +43,7 @@ namespace SpaceGame
 
         public override void Move(Vector2 direction, Vector2 target)
         {
+
         }
 
         /// <summary>
@@ -60,11 +61,16 @@ namespace SpaceGame
         /// <param name="direction">Where the enemy is moving to. </param>
         public override void Move(Vector2 direction)
         {
-            direction.x -= transform.position.x;
-            direction.y -= transform.position.y;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; //rotating enemy to look at player, then translating line
-            transform.rotation = quaternion.Euler(0,0,(angle -90f));
-            Move(speed);
+            Vector2 toTarget = (Vector2)_target.position - (Vector2)transform.position;
+
+            if (toTarget != Vector2.zero)
+            {
+                float angle = Mathf.Atan2(toTarget.y, toTarget.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
+            }
+
+            transform.position += (Vector3)(toTarget.normalized * speed * Time.deltaTime);
+
 
         }
 
@@ -72,7 +78,7 @@ namespace SpaceGame
         {
             Debug.Log("Attacking");
         }
-        
+
         public override void Shoot()
         {
         }
@@ -80,8 +86,8 @@ namespace SpaceGame
         public override void GetDamage(float damage)
         {
             health.RemoveHealth(damage);
-            if (health.GetHealth() <=0)
-            Die();
+            if (health.GetHealth() <= 0)
+                Die();
         }
 
         public override void Die()

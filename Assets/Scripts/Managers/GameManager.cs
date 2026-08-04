@@ -143,7 +143,6 @@ namespace SpaceGame
 
         void CreateEnemy()
         {
-            // _tempEnemy = Instantiate(enemyPrefab[chosenPrefab]);
             _tempEnemy = Instantiate(enemyPrefab[UnityEngine.Random.Range(0, enemyPrefab.Length)]);
             _tempEnemy.transform.position = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)].position;
             // _tempEnemy.GetComponent<Enemy>().weapon = enemyWeapon;

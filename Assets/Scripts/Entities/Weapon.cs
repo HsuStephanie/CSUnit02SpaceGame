@@ -26,8 +26,6 @@ namespace SpaceGame
 
         public void Shoot(Bullet _bullet, Transform _shootPosition, string _targetTag)
         {
-
-            
             Debug.Log("Shooting from gun");
             Bullet tempBullet = GameObject.Instantiate(_bullet, _shootPosition.position, _shootPosition.rotation);
             tempBullet.SetBullet(damage, _targetTag, bulletSpeed);

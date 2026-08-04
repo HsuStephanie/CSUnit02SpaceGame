@@ -27,15 +27,15 @@ namespace SpaceGame
             {
                 return;
             }
-            if (Vector2.Distance(transform.position, _target.position) < attackRange)
-            {
-                speed = 0f;
-                Attack(attackTime);
-            }
-            else
-            {
-                speed = setSpeed;
-            }
+            // if (Vector2.Distance(transform.position, _target.position) < attackRange)
+            // {
+            //     speed = 0f;
+            //     Attack(attackTime);
+            // }
+            // else
+            // {
+            //     speed = setSpeed;
+            // }
         }
 
         public override void Attack(float interval)
@@ -55,12 +55,16 @@ namespace SpaceGame
             }
         }
 
-        public void SetMeleeEnemy(float _attackRange, float _attackTime)
+        public override void GetDamage(float damage)
         {
-            attackRange = _attackRange;
-            attackTime = _attackTime;
+            health.RemoveHealth(damage);//Enemy receive damage
+           if (health.GetHealth() <=0)
+            Die();
         }
+        
 
+        //create a line between shooter and player
+        
 
 
     }

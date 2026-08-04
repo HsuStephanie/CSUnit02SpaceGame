@@ -61,5 +61,12 @@ namespace SpaceGame
             attackTime = _attackTime;
         }
 
+        public override void GetDamage(float damage)
+        {
+            health.RemoveHealth(damage);//Enemy receive damage
+           if (health.GetHealth() <=0)
+            Die();
+        }
+
     }
 }
