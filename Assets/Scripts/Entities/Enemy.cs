@@ -85,7 +85,9 @@ namespace SpaceGame
 
         public override void GetDamage(float damage)
         {
+            Debug.Log("GetDamage called on: " + gameObject.name + " | Health object ID: " + health.GetHashCode() + " | BEFORE: " + health.GetHealth());
             health.RemoveHealth(damage);
+            Debug.Log("AFTER: " + health.GetHealth());
             if (health.GetHealth() <= 0)
                 Die();
         }

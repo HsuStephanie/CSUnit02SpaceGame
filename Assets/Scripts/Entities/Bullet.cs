@@ -12,7 +12,7 @@ namespace SpaceGame
 
         void Start()
         {
-            SetBullet(100, "Enemy");
+            // SetBullet(100, "Enemy");
             Invoke("TimeToDestroy", 5f);
             
         }

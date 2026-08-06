@@ -9,6 +9,9 @@ namespace SpaceGame
         private Player player;
         private Vector2 moveInput;
         private Vector2 lookInput;
+
+        [SerializeField] InventoryManager inventoryManager;
+        private GameObject nuke;
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
@@ -30,11 +33,27 @@ namespace SpaceGame
                 player.Shoot();
             }
         }
+        public void OnInteract(InputValue value)
+        {
+            if (value.isPressed)
+            {
+                player.DetonateNuke();
+                
+                if (inventoryManager.hasInventory)
+                {
+                    inventoryManager.RemoveItem();
+                }
+                else
+                {
+                    Debug.Log("Inventory is empty, nothing to remove");
+                }
+            }
+        }
 
         // Update is called once per frame
         void Update()
         {
-        
+
         }
 
         private void FixedUpdate()

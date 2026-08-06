@@ -367,8 +367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpaceGame.MachineGunEnemy
   nickName: 
   speed: 0
-  attackRange: 5
-  rotationSpeed: 10
+  attackRange: 8
   bulletPrefab: {fileID: 1808337479256820334, guid: fc8887e2e53e741eeac01fb7311f7974, type: 3}
   bulletSpawnPoint: {fileID: 2257143820905038252}
 --- !u!4 &5232200077709897752 stripped

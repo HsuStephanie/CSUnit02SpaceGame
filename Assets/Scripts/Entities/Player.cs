@@ -16,31 +16,32 @@ namespace SpaceGame
 
         [Header("Weapon stats")]
         [SerializeField] private float weaponDamage = 1f;
-        
+
         [Header("Bullet stats")]
         [SerializeField] private float bulletSpeed = 10f;
-        
+
 
         public Action OnDealth;
 
         private Rigidbody2D _playerRB;
         // public Health health = new Health(); //calling the health class. Creates an instance of Health. Accesses player's version of Health class
         //Health() creates currentHealth, maxHealth, and regenRate, and gives access to AddHealth() and RemoveHealth()
-        
+
         [SerializeField] private UIManager uIManager;
+        [SerializeField] private InventoryManager inventoryManager;
 
         private void Start()
         {
-         
+
             health = new Health(100, 0.5f);
             _playerRB = GetComponent<Rigidbody2D>();
             this.nickName = "Bob";
             this.speed = 10f;
-            weapon = new Weapon("Player Weapon", weaponDamage, bulletSpeed); 
+            weapon = new Weapon("Player Weapon", weaponDamage, bulletSpeed);
 
 
         }
-        
+
 
         //Player specific methods
         //Overrides come from Playable Object class
@@ -74,11 +75,19 @@ namespace SpaceGame
         public override void GetDamage(float damage)
         {
             health.RemoveHealth(damage);//Player is receiving damage
-           if (health.GetHealth() <=0)
-            Die();
+            if (health.GetHealth() <= 0)
+                Die();
         }
 
+        public void DetonateNuke()
+        {
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
+            foreach (GameObject enemy in enemies)
+            {
+                Destroy(enemy);
+            }
+        }
 
 
 

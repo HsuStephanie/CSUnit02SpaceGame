@@ -17,7 +17,8 @@ namespace SpaceGame
         protected override void Start()
         {
             base.Start();
-            health = new Health(1f, 0f, 5f);
+            health = new Health(10f, 0f, 10f);
+            Debug.Log("Health immediately after creation: " + health.GetHealth());
 
             StartCoroutine(Explode(timeToExplode));
 
@@ -27,8 +28,13 @@ namespace SpaceGame
         {
             base.Update();
             if (_target == null)
-            return;
+                return;
 
+        }
+
+        public override void GetDamage(float damage)
+        {
+            base.GetDamage(damage);
         }
 
         IEnumerator Explode(float waitTime)
@@ -50,6 +56,8 @@ namespace SpaceGame
 
 
         }
+
+
 
     }
 }

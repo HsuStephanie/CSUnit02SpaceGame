@@ -22,7 +22,7 @@ namespace SpaceGame
         }
         public virtual void Move(Vector2 direction) { } //not part of abstraction "contract"
         public virtual void Move(float speed) { } //not part of abstraction "contract"
-        
+
         //Abstract classes
         public abstract void Move(Vector2 direction, Vector2 target); //method must be used by inherited scripts
 

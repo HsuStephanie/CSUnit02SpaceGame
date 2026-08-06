@@ -22,6 +22,7 @@ namespace SpaceGame
         {
             OnPicked();
         }
+        
     }
 
 }
