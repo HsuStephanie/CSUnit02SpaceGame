@@ -9,6 +9,7 @@ namespace SpaceGame
         private EnemyType _enemyType;
         protected Transform _target; //this is currently null
 
+        protected float originalSpeed;
 
         /// <summary>
         /// Find player dynamically
@@ -25,6 +26,7 @@ namespace SpaceGame
                 Debug.Log("Enemy could not find target player");
                 Destroy(gameObject);
             }
+            originalSpeed = speed;
 
         }
         protected virtual void Update()
@@ -38,6 +40,22 @@ namespace SpaceGame
             {
                 //move without target
                 Move(speed);
+            }
+        }
+
+         protected virtual void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                speed = 0f; //stop moving so the enemy doesn't push the player
+            }
+        }
+
+        protected virtual void OnCollisionExit2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                speed = originalSpeed; //restore normal speed once no longer touching
             }
         }
 
@@ -70,13 +88,13 @@ namespace SpaceGame
             }
 
             transform.position += (Vector3)(toTarget.normalized * speed * Time.deltaTime);
-
+        
 
         }
 
         public override void Attack(float interval)
         {
-            Debug.Log("Attacking");
+            
         }
 
         public override void Shoot()
@@ -93,16 +111,16 @@ namespace SpaceGame
         }
 
         public override void Die()
-        {
-            Debug.Log("Enemy Died");
+        { 
             GameManager.getInstance().NotifyDeath(this);//calls the method when this gameObject dies
+            GameManager.getInstance().scoreManager.IncrementScore();
             Destroy(gameObject);
         }
 
         //Not from abstract classes
         public virtual void EnemyAttack(float interval, float radius, float damage)
         {
-            Debug.Log("Enemy attacking!");
+            
         }
         public void SetEnemyType(EnemyType enemyType)
         {

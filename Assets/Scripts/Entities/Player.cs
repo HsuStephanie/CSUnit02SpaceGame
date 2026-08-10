@@ -70,7 +70,7 @@ namespace SpaceGame
             //
 
             Destroy(gameObject);
-            Debug.Log("You died!");
+
         }
         public override void GetDamage(float damage)
         {
@@ -85,13 +85,19 @@ namespace SpaceGame
 
             foreach (GameObject enemy in enemies)
             {
-                Destroy(enemy);
+                //attack and cause 30 damage
+                IDamageable damageable = enemy.GetComponent<IDamageable>();
+                if (damageable != null)
+                {
+                    damageable.GetDamage(30f);
+                }
             }
         }
-
-
-
     }
 
 
+
 }
+
+
+

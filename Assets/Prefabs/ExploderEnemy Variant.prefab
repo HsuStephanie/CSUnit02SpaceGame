@@ -254,10 +254,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpaceGame.ExploderEnemy
   nickName: 
-  speed: 2
-  explodeRadius: 3
+  speed: 3
+  explodeRadius: 4
   explodeDamage: 4
-  timeToExplode: 8
+  timeToExplode: 5
   explosionBlast: {fileID: 3144832171569544565, guid: cd6d93480fa664b22b551531919a794c, type: 3}
 --- !u!114 &4173925876984303298
 MonoBehaviour:

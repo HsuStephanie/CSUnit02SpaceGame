@@ -16,7 +16,6 @@ namespace SpaceGame
         private LineRenderer lineRenderer;
 
         //private variables
-        private float _timer = 0f;
         private float _setSpeed;
         private bool _isShooting;
 

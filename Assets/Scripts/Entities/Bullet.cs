@@ -44,7 +44,6 @@ namespace SpaceGame
             {
                 Debug.Log("Damaged object");
                 damageable.GetDamage(damage);
-                GameManager.getInstance().scoreManager.IncrementScore();
                 Destroy(gameObject); //destroy bullet
             }
             else

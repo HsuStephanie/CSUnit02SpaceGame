@@ -45,7 +45,7 @@ namespace SpaceGame
 
         #region Pseudo code
         //public ScoreManager scoreManager; DONE
-        //Bullet- BulletCount. fireRate
+        //Bullet- BulletCount. fireRate DONE
         //obstacles - asteroids
         //power ups DONE
         //score- scoreManager -> enemies destroyed DONE

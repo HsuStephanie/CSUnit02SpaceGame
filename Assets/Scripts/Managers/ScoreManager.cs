@@ -45,7 +45,7 @@ namespace SpaceGame
         /// <returns></returns>
         public int GetScore()
         {
-            return _highScore;
+            return _score;
         }
 
         public int GetHighScore()

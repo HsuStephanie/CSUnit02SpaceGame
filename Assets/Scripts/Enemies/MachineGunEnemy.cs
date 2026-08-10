@@ -12,9 +12,6 @@ namespace SpaceGame
 
         private bool _isShooting;
 
-
-
-
         protected override void Start()
         {
             base.Start();
@@ -54,7 +51,7 @@ namespace SpaceGame
         {
             _isShooting = true;
             Shoot();
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.25f);
             _isShooting = false;
         }
 
