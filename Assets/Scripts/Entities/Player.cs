@@ -29,15 +29,19 @@ namespace SpaceGame
 
         [SerializeField] private UIManager uIManager;
         [SerializeField] private InventoryManager inventoryManager;
+        [SerializeField] private AudioManager audioManager;
+       
+
 
         private void Start()
         {
-
+           
             health = new Health(100, 0.5f);
             _playerRB = GetComponent<Rigidbody2D>();
             this.nickName = "Bob";
             this.speed = 10f;
             weapon = new Weapon("Player Weapon", weaponDamage, bulletSpeed);
+
 
 
         }
@@ -58,6 +62,7 @@ namespace SpaceGame
         public override void Shoot()
         {
             weapon.Shoot(bulletPrefab, bulletSpawnPoint, targetTag);
+            audioManager.PlayerShooting();
         }
         public override void Attack(float interval)
         {
@@ -68,7 +73,7 @@ namespace SpaceGame
             //C# action
             OnDealth?.Invoke(); //when player dies, will call the Gameover condition
             //
-
+            audioManager.PlayerDying();
             Destroy(gameObject);
 
         }

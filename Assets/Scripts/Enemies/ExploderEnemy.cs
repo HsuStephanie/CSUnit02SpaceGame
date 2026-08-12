@@ -6,7 +6,7 @@ namespace SpaceGame
     public class ExploderEnemy : Enemy
     {
         [SerializeField] private float explodeRadius = 5f;
-        [SerializeField] private int explodeDamage;
+        [SerializeField] private int explodeDamage = 10;
         [SerializeField] private float timeToExplode = 10f;
 
         [SerializeField] private GameObject explosionBlast;
@@ -42,6 +42,7 @@ namespace SpaceGame
             yield return new WaitForSeconds(waitTime);
             Vector2 lastPosition = gameObject.transform.position;
             Instantiate(explosionBlast, lastPosition, Quaternion.identity);
+            audioManager.ExploderEnemyDying();
             DoExplosionDamage();
             Destroy(gameObject);
 

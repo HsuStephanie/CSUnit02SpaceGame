@@ -11,7 +11,7 @@ namespace SpaceGame
     /// </summary>
     public class GameManager : MonoBehaviour
     {
-        // private Weapon peaShooter = new Weapon();
+       
 
         [Header("Entities")]
         [SerializeField] private GameObject[] enemyPrefab;
@@ -38,6 +38,7 @@ namespace SpaceGame
 
         [SerializeField] private Player player;
         [SerializeField] private UIManager uIManager;
+        [SerializeField] private AudioManager audioManager;
 
         public PickUpSpawner pickUpSpawner;
         public ScoreManager scoreManager;

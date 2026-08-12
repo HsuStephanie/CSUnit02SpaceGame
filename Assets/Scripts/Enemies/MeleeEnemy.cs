@@ -7,7 +7,7 @@ namespace SpaceGame
         [SerializeField] private float attackRange = 0.5f;
         [SerializeField] private float attackTime = 0.1f;
 
-        private Weapon meleeWeapon = new Weapon("Melee", 1f, 0f);
+        private Weapon meleeWeapon = new Weapon("Melee", 2f, 0f);
 
         private float timer = 0f;
         private float setSpeed = 3f;

@@ -11,7 +11,7 @@ namespace SpaceGame
         [SerializeField] private Bullet bulletPrefab;
 
 
-        private Weapon shooterWeapon = new Weapon("Shooter", 1f, 5f);
+        private Weapon shooterWeapon = new Weapon("Shooter", 5f, 5f);
 
         private LineRenderer lineRenderer;
 
@@ -46,6 +46,7 @@ namespace SpaceGame
         public override void Shoot()
         {
             weapon.Shoot(bulletPrefab, shootPosition, "Player");
+            audioManager.EnemyShooting();
         }
         public override void Attack(float interval)
         {

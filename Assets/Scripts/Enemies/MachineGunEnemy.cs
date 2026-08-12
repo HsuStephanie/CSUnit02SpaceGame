@@ -39,6 +39,7 @@ namespace SpaceGame
         {
 
             weapon.Shoot(bulletPrefab, bulletSpawnPoint, _target.tag);
+            audioManager.EnemyShooting();
         }
 
         public override void Attack(float interval)

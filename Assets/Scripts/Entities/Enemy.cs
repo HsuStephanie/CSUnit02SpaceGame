@@ -11,6 +11,8 @@ namespace SpaceGame
 
         protected float originalSpeed;
 
+        protected AudioManager audioManager;
+
         /// <summary>
         /// Find player dynamically
         /// </summary>
@@ -20,6 +22,7 @@ namespace SpaceGame
             try
             {
                 _target = GameObject.FindGameObjectWithTag("Player").transform;
+                audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
             }
             catch (NullReferenceException)
             {
@@ -114,6 +117,7 @@ namespace SpaceGame
         { 
             GameManager.getInstance().NotifyDeath(this);//calls the method when this gameObject dies
             GameManager.getInstance().scoreManager.IncrementScore();
+            audioManager.EnemyDying();
             Destroy(gameObject);
         }
 
